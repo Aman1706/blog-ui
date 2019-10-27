@@ -1,4 +1,4 @@
-## Blog Ui
+## Blog UI
 
 Front End App which allows users to view posts, check the authors and their respective posts and view comments related to each post 
 
