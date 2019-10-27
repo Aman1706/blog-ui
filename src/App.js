@@ -1,26 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {BrowserRouter,Route,Link} from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import {
+    Navbar,
+    NavbarBrand,
+    NavItem,
+    Nav
+     } from 'reactstrap'
 
-export default App;
+import Posts from './components/posts/Posts'
+import Authors from './components/authors/Authors'
+import PostInfo from './components/posts/PostInfo'
+import AuthorInfo from './components/authors/AuthorInfo'
+import Home from './Home'
+
+function App(props){
+        return (
+            <BrowserRouter>
+                <div>
+                <Navbar color="dark" dark expand="md" className="mb-5">
+                <NavbarBrand color="white" href="/">Blog UI</NavbarBrand>
+                <Nav className="ml-auto" navbar>
+                <NavItem>
+                <Link className="nav-link text-light" to="/">Home</Link>
+                </NavItem>
+                <NavItem>
+                <Link className="nav-link text-light" to = "/posts">Posts</Link>
+                </NavItem>
+                <NavItem>
+                <Link className="nav-link text-light" to = "/authors">Authors</Link>
+                </NavItem>
+                </Nav>
+                </Navbar>
+
+
+                <div className="container">
+    
+                <Route path="/posts" component={Posts} exact={true}/>
+                <Route path="/authors" component={Authors} exact={true}/>
+    
+                <Route path="/posts/:id" component={PostInfo}/>
+                <Route path="/authors/:id" component={AuthorInfo}/>
+               <Route path="/" component={Home} exact={true}/>
+               </div>
+       
+            </div>
+    
+        </BrowserRouter>
+        )
+    }
+
+export default App
