@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import {Row, Col} from 'reactstrap'
 import {
     Card, CardImg, CardBody,
-    CardTitle
+    CardTitle,CardSubtitle,CardText
   } from 'reactstrap'
 
 function Home(props){
