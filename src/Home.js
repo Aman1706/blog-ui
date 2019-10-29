@@ -11,7 +11,7 @@ import {
 function Home(props){
         return (
             <div>
-                <h1 className="text-light bg-dark p-3">Recent Posts - 10</h1>
+                <h1 className="text-light bg-dark p-3 mb-5">Recent Posts - 10</h1>
                  <Row>
                     {props.posts.reverse().slice(0,10).map(post=>{
                     return (
@@ -19,8 +19,8 @@ function Home(props){
                         <Card>
                         <CardImg top width="100%" src="https://www.w3schools.com/w3css/img_lights.jpg" alt="Card image cap" />
                         <CardBody>
-                        <CardTitle>{post.title}</CardTitle>
-                        <CardSubtitle>{post.body}</CardSubtitle>
+                        <CardTitle>Title: {post.title}</CardTitle>
+                        <CardSubtitle>Body: {post.body}</CardSubtitle>
                         <CardText><Link to={`posts/${post.id}`}>Read More</Link></CardText>
                         </CardBody>
                         </Card>
